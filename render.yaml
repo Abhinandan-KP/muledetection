@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: financial-forensics-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: CORS_ORIGINS
+        value: https://your-vercel-app.vercel.app 
+      - key: CYCLE_TIMEOUT_SECONDS
+        value: "5.0"
+      - key: MAX_ROWS
+        value: "10000"
