@@ -1,0 +1,52 @@
+/* ══════════════════════════════════════════════════════════════
+   DownloadButton.css – Premium Export Button
+   ══════════════════════════════════════════════════════════════ */
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #a855f7, #f59e0b);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(168,85,247,0.20);
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(168,85,247,0.35), 0 2px 8px rgba(245,158,11,0.18);
+}
+.download-btn:hover::before { opacity: 1; }
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 12px rgba(168,85,247,0.25);
+}
+
+.download-btn.done {
+  background: linear-gradient(135deg, #a855f7, #c084fc);
+  color: #fff;
+}
+.download-btn.done:hover {
+  box-shadow: 0 6px 28px rgba(168,85,247,0.45);
+}
